@@ -14,6 +14,12 @@ class LinkedList {
       temporary.nextNode = new Node(value);
     }
   }
+
+  prepend(value) {
+    let prependedNode = new Node(value);
+    prependedNode.nextNode = this.firstNode;
+    this.firstNode = prependedNode;
+  }
 }
 
 class Node {
@@ -35,6 +41,10 @@ myLinkedList.append(3);
 
 console.log(myLinkedList);
 
-myLinkedList.append(4);
+myLinkedList.prepend('Banana');
+
+console.log(myLinkedList);
+
+myLinkedList.prepend('Cherry');
 
 console.log(myLinkedList);
