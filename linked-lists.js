@@ -52,6 +52,16 @@ class LinkedList {
       return tail;
     }
   }
+
+  at(index) {
+    let counter = 1;
+    let temporary = this.firstNode;
+    while (counter < index) {
+      temporary = temporary.nextNode;
+      counter += 1;
+    }
+    return temporary;
+  }
 }
 
 class Node {
@@ -85,4 +95,6 @@ myLinkedList.prepend('Cherry');
 
 // console.log(myLinkedList.head());
 
-console.log(myLinkedList.tail());
+// console.log(myLinkedList.tail());
+
+console.log(myLinkedList.at(3));
