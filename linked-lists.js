@@ -20,6 +20,20 @@ class LinkedList {
     prependedNode.nextNode = this.firstNode;
     this.firstNode = prependedNode;
   }
+
+  size() {
+    let numberOfNodes = 1;
+    if (this.firstNode.nextNode === null) {
+      return numberOfNodes;
+    } else {
+      let temporary = this.firstNode;
+      while (temporary.nextNode != null) {
+        temporary = temporary.nextNode;
+        numberOfNodes += 1;
+      }
+      return numberOfNodes;
+    }
+  }
 }
 
 class Node {
@@ -48,3 +62,5 @@ console.log(myLinkedList);
 myLinkedList.prepend('Cherry');
 
 console.log(myLinkedList);
+
+console.log(myLinkedList.size());
