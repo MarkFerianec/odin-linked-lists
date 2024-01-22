@@ -34,6 +34,10 @@ class LinkedList {
       return numberOfNodes;
     }
   }
+
+  head() {
+    return this.firstNode;
+  }
 }
 
 class Node {
@@ -45,22 +49,24 @@ class Node {
 
 let myLinkedList = new LinkedList(1);
 
-console.log(myLinkedList);
+// console.log(myLinkedList);
 
 myLinkedList.append(2);
 
-console.log(myLinkedList);
+// console.log(myLinkedList);
 
 myLinkedList.append(3);
 
-console.log(myLinkedList);
+// console.log(myLinkedList);
 
 myLinkedList.prepend('Banana');
 
-console.log(myLinkedList);
+// console.log(myLinkedList);
 
 myLinkedList.prepend('Cherry');
 
-console.log(myLinkedList);
+// console.log(myLinkedList);
 
-console.log(myLinkedList.size());
+// console.log(myLinkedList.size());
+
+console.log(myLinkedList.head());
