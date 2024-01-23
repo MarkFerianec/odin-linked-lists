@@ -62,6 +62,14 @@ class LinkedList {
     }
     return temporary;
   }
+
+  pop() {
+    let temporary = this.firstNode;
+    while (temporary.nextNode.nextNode != null) {
+      temporary = temporary.nextNode;
+    }
+    temporary.nextNode = null;
+  }
 }
 
 class Node {
@@ -89,7 +97,7 @@ myLinkedList.prepend('Banana');
 
 myLinkedList.prepend('Cherry');
 
-// console.log(myLinkedList);
+console.log(myLinkedList);
 
 // console.log(myLinkedList.size());
 
@@ -97,4 +105,9 @@ myLinkedList.prepend('Cherry');
 
 // console.log(myLinkedList.tail());
 
-console.log(myLinkedList.at(3));
+// console.log(myLinkedList.at(3));
+
+myLinkedList.pop();
+myLinkedList.pop();
+
+console.log(myLinkedList);
