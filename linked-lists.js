@@ -70,6 +70,21 @@ class LinkedList {
     }
     temporary.nextNode = null;
   }
+
+  contains(value) {
+    let temporary = this.firstNode;
+    let containsValue;
+    while (temporary.nextNode != null || temporary.value === value) {
+      if (temporary.value === value) {
+        containsValue = true;
+        break;
+      } else {
+        containsValue = false;
+      }
+      temporary = temporary.nextNode;
+    }
+    return containsValue;
+  }
 }
 
 class Node {
@@ -107,7 +122,14 @@ console.log(myLinkedList);
 
 // console.log(myLinkedList.at(3));
 
-myLinkedList.pop();
-myLinkedList.pop();
+// myLinkedList.pop();
+// myLinkedList.pop();
 
-console.log(myLinkedList);
+console.log(myLinkedList.contains('Cherry'));
+console.log(myLinkedList.contains('Banana'));
+console.log(myLinkedList.contains('Strawberry'));
+console.log(myLinkedList.contains(1));
+console.log(myLinkedList.contains(2));
+console.log(myLinkedList.contains(3));
+console.log(myLinkedList.contains(4));
+console.log(myLinkedList.contains(5));
