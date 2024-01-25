@@ -85,6 +85,22 @@ class LinkedList {
     }
     return containsValue;
   }
+
+  find(value) {
+    let index = 1;
+    let temporary = this.firstNode;
+    if (this.firstNode.value === value) {
+      return index;
+    }
+    while (temporary.nextNode != null) {
+      temporary = temporary.nextNode;
+      index += 1;
+      if (temporary.value === value) {
+        return index;
+      }
+    }
+    return null;
+  }
 }
 
 class Node {
@@ -125,11 +141,20 @@ console.log(myLinkedList);
 // myLinkedList.pop();
 // myLinkedList.pop();
 
-console.log(myLinkedList.contains('Cherry'));
-console.log(myLinkedList.contains('Banana'));
-console.log(myLinkedList.contains('Strawberry'));
-console.log(myLinkedList.contains(1));
-console.log(myLinkedList.contains(2));
-console.log(myLinkedList.contains(3));
-console.log(myLinkedList.contains(4));
-console.log(myLinkedList.contains(5));
+// console.log(myLinkedList.contains('Cherry'));
+// console.log(myLinkedList.contains('Banana'));
+// console.log(myLinkedList.contains('Strawberry'));
+// console.log(myLinkedList.contains(1));
+// console.log(myLinkedList.contains(2));
+// console.log(myLinkedList.contains(3));
+// console.log(myLinkedList.contains(4));
+// console.log(myLinkedList.contains(5));
+
+console.log(myLinkedList.find('Cherry'));
+console.log(myLinkedList.find('Banana'));
+console.log(myLinkedList.find('Strawberry'));
+console.log(myLinkedList.find(1));
+console.log(myLinkedList.find(2));
+console.log(myLinkedList.find(3));
+console.log(myLinkedList.find(4));
+console.log(myLinkedList.find(5));
