@@ -101,6 +101,18 @@ class LinkedList {
     }
     return null;
   }
+
+  toString() {
+    let string = '';
+    let temporary = this.firstNode;
+    while (temporary.nextNode != null) {
+      string += ` ( ${temporary.value} ) ->`;
+      temporary = temporary.nextNode;
+    }
+    string += ` ( ${temporary.value} ) -> `;
+    string += temporary.nextNode;
+    return string;
+  }
 }
 
 class Node {
@@ -150,11 +162,13 @@ console.log(myLinkedList);
 // console.log(myLinkedList.contains(4));
 // console.log(myLinkedList.contains(5));
 
-console.log(myLinkedList.find('Cherry'));
-console.log(myLinkedList.find('Banana'));
-console.log(myLinkedList.find('Strawberry'));
-console.log(myLinkedList.find(1));
-console.log(myLinkedList.find(2));
-console.log(myLinkedList.find(3));
-console.log(myLinkedList.find(4));
-console.log(myLinkedList.find(5));
+// console.log(myLinkedList.find('Cherry'));
+// console.log(myLinkedList.find('Banana'));
+// console.log(myLinkedList.find('Strawberry'));
+// console.log(myLinkedList.find(1));
+// console.log(myLinkedList.find(2));
+// console.log(myLinkedList.find(3));
+// console.log(myLinkedList.find(4));
+// console.log(myLinkedList.find(5));
+
+console.log(myLinkedList.toString());
